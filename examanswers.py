@@ -50,6 +50,33 @@ econ302exam2answers = {
     24: "D"
 }
 
+econ302exam3answers = {
+    1: "D",
+    2: "D",
+    3: "A",
+    4: "C",
+    5: "D",
+    6: "A",
+    7: "A",
+    8: "B",
+    9: "D",
+    10: "C",
+    11: "D",
+    12: "A",
+    13: "A",
+    14: "B",
+    15: "C",
+    16: "C",
+    17: "B",
+    18: "B",
+    19: "D",
+    20: "C",
+    21: "C",
+    22: "C",
+    23: "A",
+    24: "C"
+}
+
 # # Iterator for the dictionary
 # answers_iterator = iter(answers.items())
 
@@ -61,7 +88,7 @@ econ302exam2answers = {
 #         print("No more questions!")
 
 # Simulating terminal input
-answers = econ302exam2answers
+answers = econ302exam3answers
 correct = 0
 wrong = []
 while True:
@@ -77,8 +104,11 @@ while True:
     except:
         print("do something breh")
         if command[0] == "quit":
-            print(f"final score = {(correct)/(correct + len(wrong)) * 100}%")
-            print("wrong answers were", wrong)
+            if correct != 0 or len(wrong) != 0:
+                print(f"final score = {(correct)/(correct + len(wrong)) * 100}%")
+                print("wrong answers were", wrong)
+            else:
+                print("do something bum")
             print("Exiting.")
             break
     # elif command != "quit":
